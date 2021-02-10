@@ -9,9 +9,8 @@ BBMASK = "meta-networking/recipes-kernel/wireguard"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-DISTRO_FEATURES = "bluetooth ext2 opengl usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES_append = " pulseaudio bluetooth ext2 usbhost ${DISTRO_FEATURES_LIBC}"
 
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
@@ -21,7 +20,7 @@ VIRTUAL-RUNTIME_init_manager = "sysvinit"
 
 MACHINE_FEATURES_remove = "apm"
 
-IMAGE_FSTYPES = "tar.xz"
+IMAGE_FSTYPES = "wic.bz2"
 
 MACHINE = "raspberrypi4-64"
 
@@ -56,11 +55,11 @@ INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 # this will force root to change password on first login
-INHERIT += "chageusers"
-CHAGE_USERS_PARAMS = "chage -d0 root; "
+# INHERIT += "chageusers"
+# CHAGE_USERS_PARAMS = "chage -d0 root; "
 
 USER_CLASSES = "image-mklibs image-prelink"
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"
-INHERIT += "rm_work"
+# INHERIT += "rm_work"
 CONF_VERSION = "1"

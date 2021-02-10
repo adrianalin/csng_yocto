@@ -6,19 +6,15 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${HOME}/poky-dunfell/meta \
-    ${HOME}/poky-dunfell/meta-poky \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-oe \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-multimedia \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-networking \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-perl \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-python \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-filesystems \
-    ${HOME}/poky-dunfell/meta-virtualization \
-    ${HOME}/poky-dunfell/meta-qt5 \
-    ${HOME}/poky-dunfell/meta-raspberrypi \
-    ${HOME}/poky-dunfell/meta-security \
-    ${HOME}/poky-dunfell/meta-jumpnow \
-    ${HOME}/poky-dunfell/meta-rpi \
-    ${HOME}/poky-dunfell/meta-crankshaft \
-"
+  ${HOME}/workspace/poky/meta \
+  ${HOME}/workspace/poky/meta-poky \
+  ${HOME}/workspace/poky/meta-openembedded/meta-oe \
+  ${HOME}/workspace/poky/meta-openembedded/meta-multimedia \
+  ${HOME}/workspace/poky/meta-openembedded/meta-networking \
+  ${HOME}/workspace/poky/meta-openembedded/meta-perl \
+  ${HOME}/workspace/poky/meta-openembedded/meta-python \
+  ${HOME}/workspace/poky/meta-openembedded/meta-filesystems \
+  ${HOME}/workspace/poky/meta-qt5 \
+  ${HOME}/workspace/poky/meta-raspberrypi \
+  ${HOME}/workspace/poky/csng_yocto/meta-crankshaft \
+  "

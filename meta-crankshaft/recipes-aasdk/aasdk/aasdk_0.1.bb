@@ -4,25 +4,20 @@ LICENSE = "GPL-3.0"
 LIC_FILES_CHKSUM = "file://../git/LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 SRC_URI = "git://github.com/opencardev/aasdk.git;protocol=https;branch=development"
 SRCREV = "development"
+
 DEPENDS += " protobuf protobuf-native boost libusb"
+
 inherit cmake
-EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release ../git"
+
+EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 # this is a revision number that should be updated every time you alter this recipe
 PR = "r0" 
 
-# this indicates the folder to run do_compile from.
-S="${WORKDIR}/aasdk"
+# TODO fix this path
+S="${WORKDIR}/git"
 
-# this command will be run to compile your source code. it assumes you are in the
-# directory indicated by S. i'm just going to use make and rely on my Makefile
-#do_compile () {
-#  cmake -DCMAKE_BUILD_TYPE=Release ../git
-#  make -j2
-#}
- 
-# this will copy the compiled file and place it in ${bindir}, which is /usr/bin
-#do_install () {
-#  install -d ${D}${libdir}
-#  install -m 0755 libaasdk.so ${D}${libdir}
-#  install -m 0755 libaasdk_proto.so ${D}${libdir}
-#}
+do_install_append () {
+	install -d ${D}${includedir}/aasdk_proto
+	cp -R --no-dereference --preserve=mode,links -v  ${S}/include/f1x ${D}${includedir}/
+	install -m 0644 ${S}/../build/aasdk_proto/*.h ${D}${includedir}/aasdk_proto
+}
