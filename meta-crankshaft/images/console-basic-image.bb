@@ -48,6 +48,10 @@ IMAGE_INSTALL += " \
 	librtaudio \
 	openauto \
 	sudo \
+	hostapd \
+	dnsmasq \
+	crankshaft \
+	dhcpcd \
 "
 
 export IMAGE_BASENAME = "console-basic-image"
