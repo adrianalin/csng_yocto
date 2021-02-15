@@ -52,7 +52,10 @@ SDKMACHINE = "x86_64"
 
 # for a root passwd, change jumpnowtek below to your password
 INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
+EXTRA_USERS_PARAMS = "\
+	usermod -P raspberry root; \
+	useradd -P raspberry -G sudo pi; \
+"
 
 # this will force root to change password on first login
 # INHERIT += "chageusers"

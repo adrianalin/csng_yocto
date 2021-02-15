@@ -47,6 +47,7 @@ IMAGE_INSTALL += " \
 	${QT_DEV} \
 	librtaudio \
 	openauto \
+	sudo \
 "
 
 export IMAGE_BASENAME = "console-basic-image"
