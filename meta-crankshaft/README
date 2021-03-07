@@ -1,5 +1,19 @@
 This README file contains information on the contents of the meta-crankshaft layer.
 
+AACS image
+==========
+
+In order to build the aacs-image:
+* run openauto on laptop
+* checkout aacs-image branch
+* bitbake aacs-image
+* flash the generated image build/tmp/deploy/images/raspberrypi4-64/aacs-image-raspberrypi4-64.wic.bz2: sudo bmaptool copy --nobmap aacs-image-raspberrypi4-64.wic.bz2 /dev/sdX (replace X with SD card device letter)
+* Raspberry Pi4 connects to laptop via USB C cable which is both power and data.
+* boot Raspberry Pi4 with the new image.
+* On Raspberry Pi4 just run AAServer. openauto app must be running on laptop.
+* The test video pattern should be displayed on laptop openauto app.
+
+
 Please see the corresponding sections below for details.
 
 Dependencies
